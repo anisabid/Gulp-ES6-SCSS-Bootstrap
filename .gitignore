@@ -35,3 +35,6 @@ bower_components
 
 # IDE
 .idea
+
+# Dist
+dist/
