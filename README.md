@@ -1,2 +1,2 @@
 # front
-Front End Project Base
+Basic Front End Project

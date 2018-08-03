@@ -1,14 +1,24 @@
-/*------------------------------------------------------------------
-Generated From SCSS
-[Table of Modules]
+// Copyright Reserved xxx
+// Modules @import
+// --------------------------------------------------
 
-1. Layouts
-2. Typography
--------------------------------------------------------------------*/
+// Help Bar
+@import "modules/help_bar";
 
-// 1. Loyouts
-@import "modules/layouts";
+// Tabs
+@import "modules/tabs";
 
-// 2. Typography
-@import "modules/typography";
+//Main Layout
+@import "modules/layout";
 
+//Breadcrumbs
+@import "modules/breadcrumbs";
+
+//Panels
+@import "modules/panels";
+
+//Forms
+@import "modules/forms";
+
+//Forms
+@import "modules/list_articles";
