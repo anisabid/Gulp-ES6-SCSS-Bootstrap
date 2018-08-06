@@ -1,55 +1,44 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
-    extender = require('gulp-html-extend');
+    extender = require('gulp-html-extend'),
+    config = require('./gulp.config')();
 $ = require('gulp-load-plugins')({lazy: true});
 
 gulp.task('styles', function () {
     return gulp
-        .src('./src/sass/*.scss')
+        .src(config.sass.src)
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe($.concat('styles.css'))
-        .pipe(gulp.dest('public/css'))
+        .pipe($.concat(config.sass.output))
+        .pipe(gulp.dest(config.sass.dest))
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe($.cleanCss())
         .pipe($.rename({suffix: '.min'}))
-        .pipe(gulp.dest('public/css'))
+        .pipe(gulp.dest(config.sass.dest))
         .pipe(browserSync.reload({stream: true}));
-});
-
-gulp.task('vendorScripts', function () {
-    gulp.src('./src/js/vendor/**/*.js')
-        .pipe(gulp.dest('public/js/vendor'));
 });
 
 gulp.task('scripts', function () {
     return gulp
-        .src([
-            './src/js/!(vendor)**/!(app)*.js',
-            './node_modules/jquery/dist/jquery.min.js',
-            './node_modules/popper.js/dist/popper.min.js',
-            './node_modules/bootstrap/dist/js/bootstrap.min.js',
-            './node_modules/babel-polyfill/dist/polyfill.js',
-            './src/js/app.js'
-        ])
+        .src(config.js.src)
         .pipe($.plumber())
         .pipe($.babel({
             "presets": ["es2015"]
         }))
-        .pipe($.concat('scripts.js'))
+        .pipe($.concat(config.js.output))
         //.pipe( $.uglify() )
-        .pipe(gulp.dest('public/js'))
+        .pipe(gulp.dest(config.js.dest))
         .pipe(browserSync.reload({stream: true}))
         .pipe($.uglify())
         .pipe($.rename({suffix: '.min'}))
-        .pipe(gulp.dest('public/js'));
+        .pipe(gulp.dest(config.js.dest));
 });
 
 // Optimizes the images that exists
 gulp.task('images', function () {
     return gulp
-        .src('src/images/**')
+        .src(config.img.src)
         .pipe($.changed('images'))
         .pipe($.imagemin({
             // Lossless conversion to progressive JPGs
@@ -57,20 +46,20 @@ gulp.task('images', function () {
             // Interlace GIFs for progressive rendering
             interlaced: true
         }))
-        .pipe(gulp.dest('public/images'))
+        .pipe(gulp.dest(config.img.dest))
         .pipe($.size({title: 'images'}));
 });
 
 gulp.task('html', [], () => {
-    return gulp.src('src/html/*.html')
+    return gulp.src(config.html.src)
         .pipe(extender({annotations: true, verbose: false})) // default options
-        .pipe(gulp.dest('public/'));
+        .pipe(gulp.dest(config.html.dest));
 });
 
 gulp.task('browser-sync', ['styles', 'scripts'], function () {
     browserSync({
         server: {
-            baseDir: "./public/",
+            baseDir: config.dist,
             injectChanges: true // this is new
         }
     });
@@ -78,28 +67,25 @@ gulp.task('browser-sync', ['styles', 'scripts'], function () {
 
 gulp.task('deploy', function () {
     return gulp
-        .src('./public/**/*')
+        .src('./dist/**/*')
         .pipe(ghPages());
 });
 
 gulp.task('watch', function () {
     // Watch .html files
-    gulp.watch('src/html/**/*.html', ['html', browserSync.reload]);
-    gulp.watch("public/*.html").on('change', browserSync.reload);
+    gulp.watch(config.html.watch, ['html', browserSync.reload]);
+    gulp.watch(config.html.watch).on('change', browserSync.reload);
     // Watch .sass files
-    gulp.watch('src/sass/**/*.scss', ['styles', browserSync.reload]);
+    gulp.watch(config.sass.watch, ['styles', browserSync.reload]);
     // Watch .js files
-    gulp.watch('src/js/*.js', ['scripts', browserSync.reload]);
-    // Watch .js files
-    gulp.watch('src/js/vendor/*', ['vendorScripts', browserSync.reload]);
+    gulp.watch(config.js.watch, ['scripts', browserSync.reload]);
     // Watch image files
-    gulp.watch('src/images/**/*', ['images', browserSync.reload]);
+    gulp.watch(config.img.watch, ['images', browserSync.reload]);
 });
 
 gulp.task('default', function () {
     gulp.start(
         'styles',
-        'vendorScripts',
         'scripts',
         'images',
         'html',
