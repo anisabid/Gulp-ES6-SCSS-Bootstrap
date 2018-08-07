@@ -22,12 +22,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
     return gulp
         .src(config.js.src)
-        .pipe($.plumber())
-        .pipe($.babel({
-            "presets": ["es2015"]
-        }))
         .pipe($.concat(config.js.output))
-        //.pipe( $.uglify() )
         .pipe(gulp.dest(config.js.dest))
         .pipe(browserSync.reload({stream: true}))
         .pipe($.uglify())
