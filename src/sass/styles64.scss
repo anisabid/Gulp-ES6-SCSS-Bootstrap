@@ -1,0 +1,21 @@
+.icon {
+  $path-icon-maisonphenix-dark: "images/maisonphenix-dark.svg";
+  &.icon-maisonphenix-dark {
+    background-image: url($path-icon-maisonphenix-dark);
+  }
+
+  $path-icon-simulateur: "images/icon-simulateur.svg";
+  &.icon-simulateur {
+    background-image: url($path-icon-simulateur);
+  }
+
+  $path-icon-calendar: "images/icon-calendar.svg";
+  &.icon-calendar {
+    background-image: url($path-icon-calendar);
+  }
+
+  $path-icon-user: "images/icon-user.svg";
+  &.icon-user {
+    background-image: url($path-icon-user);
+  }
+}

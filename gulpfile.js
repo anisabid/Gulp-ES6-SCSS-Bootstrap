@@ -19,6 +19,31 @@ gulp.task('styles', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('styles:images:base64', function () {
+    return gulp.src('./src/sass/styles64.scss')
+        .pipe($.sass().on('error', $.sass.logError))
+        .pipe($.base64({
+            baseDir: 'src',
+            extensions: ['svg', 'png', /\.jpg#datauri$/i],
+            exclude: [/\.server\.(com|net)\/dynamic\//, '--live.jpg'],
+            debug: true
+        }))
+        .pipe($.concat('styles64.css'))
+        .pipe(gulp.dest('./dist/css'))
+        .pipe($.sass())
+        .pipe($.base64({
+            baseDir: 'src',
+            extensions: ['svg', 'png', /\.jpg#datauri$/i],
+            exclude: [/\.server\.(com|net)\/dynamic\//, '--live.jpg'],
+            maxImageSize: 8 * 1024, // bytes
+            debug: true
+        }))
+        .pipe($.rename({suffix: '.min'}))
+        .pipe($.cleanCss())
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(browserSync.reload({stream: true}));
+});
+
 gulp.task('scripts', function () {
     return gulp
         .src(config.js.src)
@@ -81,6 +106,7 @@ gulp.task('watch', function () {
 gulp.task('default', function () {
     gulp.start(
         'styles',
+        'styles:images:base64',
         'scripts',
         'images',
         'html',

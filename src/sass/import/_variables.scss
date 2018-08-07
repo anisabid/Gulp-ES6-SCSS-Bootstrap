@@ -74,9 +74,15 @@ $CONST-BASE-UNIT: 8px !default;
 // Base
 // --------------------------------------------------
 $var-prefix-class: #{$CONST-NAMESPACE}- !default;
-$CONST-BASE-UNIT: 8px !default;
 $var-transition: all 0.1s linear 0s !default;
 $var-link-transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s, width 0.2s linear 0s,  padding 0.2s linear 0s, box-shadow 0.2s linear 0s !default;
+
+
+// Rem
+// --------------------------------------------------
+$var-rem-baseline: 16px !default;
+$var-rem-fallback: false !default;
+$var-rem-px-only: false !default;
 
 // Header
 // --------------------------------------------------

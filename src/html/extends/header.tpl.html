@@ -1,39 +1,53 @@
-<header>
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <a class="navbar-brand mr-auto mr-lg-0" href="#">
-            <img src="/images/maisonphenix.png" alt="MaisonPhenix">
+<header class="header clearfix">
+    <nav class="navbar navbar-expand-lg fixed-top p-0">
+        <a class="navbar-brand mr-auto mr-lg-0 p-0" href="/">
+            <img class="logo" src="/images/maisonphenix-dark.svg" alt="MaisonPhenix">
         </a>
         <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
+
+            <ul class="navbar-nav ml-auto primary-navbar">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Modèles & plans <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Notifications</a>
+                    <a class="nav-link" href="#">Collections</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="#">Conseils</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Switch account</a>
+                    <a class="nav-link" href="/annonce/detail.html">Annonces</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Settings</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Agences</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
+            <ul class="navbar-nav secondary-navbar">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="icon icon-simulateur"></i>
+                        <span>Simulateur</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="icon icon-calendar"></i>
+                        <span>Prendre RDV</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">
+                        <i class="icon icon-user"></i>
+                        <span>Mon compte</span>
+                    </a>
+                </li>
+            </ul>
         </div>
+
     </nav>
 </header>

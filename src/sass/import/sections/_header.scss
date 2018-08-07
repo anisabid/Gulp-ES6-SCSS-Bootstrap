@@ -10,3 +10,46 @@
 
 // Making
 // --------------------------------------------------
+.header {
+
+  .navbar-brand .logo {
+    height: rem(52px);
+    margin: 1.25rem 1.875rem;
+  }
+
+  .navbar-nav {
+    &.primary-navbar,
+    &.secondary-navbar {
+      .nav-item {
+        font-size: rem(13px);
+        text-transform: uppercase;
+      }
+    }
+
+    &.primary-navbar {
+      padding-right: rem($CONST-BASE-UNIT * 14);
+      .nav-item {
+        .nav-link {
+          padding: rem(($CONST-BASE-UNIT * 2) ($CONST-BASE-UNIT * 1.5));
+        }
+      }
+    }
+
+    &.secondary-navbar {
+      .nav-item {
+        border-left: 1px solid #D1DDE9;
+        padding: 0;
+        .nav-link {
+          padding: rem(($CONST-BASE-UNIT * 2) ($CONST-BASE-UNIT * 2.5));
+        }
+        .icon {
+          height: rem(41px);
+          width: 100%;
+          display: block;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+  }
+}

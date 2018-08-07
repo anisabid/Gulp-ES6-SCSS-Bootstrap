@@ -4,7 +4,7 @@ module.exports = function () {
         dist: './dist/',
         src: './src/',
         sass: {
-            src: ['src/sass/*.scss'],
+            src: ['src/sass/styles.scss'],
             dest: './dist/css/',
             output: 'styles.css',
             watch: ['./src/sass/**/*.scss']
