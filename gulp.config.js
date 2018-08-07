@@ -14,7 +14,7 @@ module.exports = function () {
                 './node_modules/popper.js/dist/umd/popper.js',
                 './node_modules/bootstrap/dist/js/bootstrap.js',
                 './node_modules/babel-polyfill/dist/polyfill.js',
-                './src/js/app.js'],
+                './src/js/**/*.js'],
             dest: './dist/js/',
             output: 'scripts.js',
             watch: ['./src/js/**/*.js']
