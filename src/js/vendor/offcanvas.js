@@ -5,14 +5,18 @@
             options: {
                 selector: '[data-toggle="offcanvas"]'
             },
-            init: function () {
-                $(this.options.selector).on('click', function () {
+            bind: function () {
+                $(this.options.selector).bind('click', function () {
                     $('.offcanvas-collapse').toggleClass('open')
                 });
                 return true;
             },
+            unbind: function () {
+                $(this.options.selector).unbind('click');
+                return true;
+            },
             ready: function () {
-                this.init();
+                this.bind();
             }
         }
 

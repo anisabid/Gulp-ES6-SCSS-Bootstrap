@@ -48,71 +48,80 @@ $CONST-MIX-dark: 80% !default;
 $CONST-MIX-darker: 60% !default;
 $CONST-MIX-darkest: 20% !default;
 
-//
-$CONST-FONT: "Lato", sans-serif !default;
+// Const Font
+$CONST-FONT: "Catamaran", sans-serif !default;
 $CONST-FONT-ICONS: "FontAwesome" !default;
+
+// Const Font Weight
+// --------------------------------------------------
+$CONST-FONT-WEIGHT-THIN: 100;
+$CONST-FONT-WEIGHT-EXTRA-LIGHT: 200;
+$CONST-FONT-WEIGHT-LIGHT: 300;
+$CONST-FONT-WEIGHT-REGULAR: 400;
+$CONST-FONT-WEIGHT-MEDIUM: 500;
+$CONST-FONT-WEIGHT-SEMI-BOLD: 600;
+$CONST-FONT-WEIGHT-BOLD: 700;
+$CONST-FONT-WEIGHT-EXTRA-BOLD: 800;
+$CONST-FONT-WEIGHT-BLACK: 900;
+
+// Const Base Unit
+// --------------------------------------------------
+$CONST-BASE-UNIT: 8px !default;
 
 //
 // [2.] Variables
 // --------------------------------------------------
 // Base
 // --------------------------------------------------
-$ktv-prefix-class: #{$CONST-NAMESPACE}- !default;
-$ktv-base-unit: 8px !default;
-$ktv-transition: all 0.1s linear 0s !default;
-$ktv-link-transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s, width 0.2s linear 0s,  padding 0.2s linear 0s, box-shadow 0.2s linear 0s !default;
+$var-prefix-class: #{$CONST-NAMESPACE}- !default;
+$CONST-BASE-UNIT: 8px !default;
+$var-transition: all 0.1s linear 0s !default;
+$var-link-transition: color 0.1s linear 0s, background-color 0.1s linear 0s, opacity 0.2s linear 0s, width 0.2s linear 0s,  padding 0.2s linear 0s, box-shadow 0.2s linear 0s !default;
 
 // Header
 // --------------------------------------------------
-$ktv-header-height: $ktv-base-unit*8 !default; // 8*8 = 64px
+$var-header-height: $CONST-BASE-UNIT*8 !default; // 8*8 = 64px
 
 // SideBar
 // --------------------------------------------------
-$ktv-sidebar-width: $ktv-base-unit*35 !default; // 8*35 = 280px
-$ktv-sidebar-width--pin: $ktv-base-unit*33 !default; // 8*38 = 304px
-$ktv-sidebar-offset: $ktv-base-unit*9 !default; // 8*9 = 72px
+$var-sidebar-width: $CONST-BASE-UNIT*35 !default; // 8*35 = 280px
+$var-sidebar-width--pin: $CONST-BASE-UNIT*33 !default; // 8*38 = 304px
+$var-sidebar-offset: $CONST-BASE-UNIT*9 !default; // 8*9 = 72px
 
 // Secondary SideBar
 // --------------------------------------------------
-$ktv-secondary-sidebar-width: $ktv-base-unit*31 !default; // 8*31 = 248px
+$var-secondary-sidebar-width: $CONST-BASE-UNIT*31 !default; // 8*31 = 248px
 
 // Z-index Scale
 // --------------------------------------------------
-$ktv-zIndex-1: 100 !default;
-$ktv-zIndex-2: 200 !default;
-$ktv-zIndex-3: 300 !default;
-$ktv-zIndex-4: 400 !default;
-$ktv-zIndex-5: 500 !default;
-$ktv-zIndex-6: 600 !default;
-$ktv-zIndex-7: 700 !default;
-$ktv-zIndex-8: 800 !default;
-$ktv-zIndex-9: 900 !default;
-$ktv-zIndex-10: 1000 !default;
+$var-zIndex-1: 100 !default;
+$var-zIndex-2: 200 !default;
+$var-zIndex-3: 300 !default;
+$var-zIndex-4: 400 !default;
+$var-zIndex-5: 500 !default;
+$var-zIndex-6: 600 !default;
+$var-zIndex-7: 700 !default;
+$var-zIndex-8: 800 !default;
+$var-zIndex-9: 900 !default;
+$var-zIndex-10: 1000 !default;
 
 // Z-index widget
 // --------------------------------------------------
-$ktv-zIndex-sidebar: $ktv-zIndex-10 !default;
-$ktv-zIndex-tooltips: $ktv-zIndex-10 !default;
-$ktv-zIndex-notifications: $ktv-zIndex-9 !default;
-$ktv-zIndex-navbar: $ktv-zIndex-8 !default;
-$ktv-zIndex-dropdown: $ktv-zIndex-7 !default;
-$ktv-zIndex-dropdownMask: $ktv-zIndex-6 !default;
-$ktv-zIndex-portlet: $ktv-zIndex-6 !default;
-$ktv-zIndex-topUserProfile: $ktv-zIndex-10 !default;
+$var-zIndex-sidebar: $var-zIndex-10 !default;
+$var-zIndex-tooltips: $var-zIndex-10 !default;
+$var-zIndex-notifications: $var-zIndex-9 !default;
+$var-zIndex-navbar: $var-zIndex-8 !default;
+$var-zIndex-dropdown: $var-zIndex-7 !default;
+$var-zIndex-dropdownMask: $var-zIndex-6 !default;
+$var-zIndex-portlet: $var-zIndex-6 !default;
+$var-zIndex-topUserProfile: $var-zIndex-10 !default;
 
-// Font Weight
-// --------------------------------------------------
-$ktv-font-weight-thin: 100;
-$ktv-font-weight-light: 300;
-$ktv-font-weight-regular: 400;
-$ktv-font-weight-medium: 500;
-$ktv-font-weight-bold: 700;
-$ktv-font-weight-black: 900;
+
 
 // Hero Section
 // --------------------------------------------------
-$ktv-hero-section-transition: height 0.2s linear 0s, box-shadow 0.2s linear 0s, padding 0.2s linear 0s, !default;
+$var-hero-section-transition: height 0.2s linear 0s, box-shadow 0.2s linear 0s, padding 0.2s linear 0s, !default;
 
 // Horizontal Menu
 // --------------------------------------------------
-$ktv-horizontal-menu-transition: height 0.1s linear 0s, box-shadow 0.2s linear 0s, padding 0.2s linear 0s, !default;
+$var-horizontal-menu-transition: height 0.1s linear 0s, box-shadow 0.2s linear 0s, padding 0.2s linear 0s, !default;
