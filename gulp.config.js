@@ -9,6 +9,12 @@ module.exports = function () {
             output: 'styles.css',
             watch: ['./src/sass/**/*.scss']
         },
+        sass64: {
+            src: ['src/sass/styles.64.scss'],
+            dest: './dist/css/',
+            output: 'styles.64.css',
+            watch: ['./src/sass/**/*.64.scss']
+        },
         js: {
             src: ['./node_modules/jquery/dist/jquery.js',
                 './node_modules/popper.js/dist/umd/popper.js',

@@ -13,7 +13,7 @@
     "scripts": "./node_modules/.bin/gulp scripts",
     "images": "./node_modules/.bin/gulp images",
     "html": "./node_modules/.bin/gulp html",
-    "styles:images:base64": "./node_modules/.bin/gulp styles:images:base64",
+    "styles:images:base64": "./node_modules/.bin/gulp styles:64",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

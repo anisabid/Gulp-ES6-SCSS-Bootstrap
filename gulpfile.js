@@ -19,20 +19,20 @@ gulp.task('styles', function () {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('styles:images:base64', function () {
-    return gulp.src('./src/sass/styles64.scss')
+gulp.task('styles:64', function () {
+    return gulp.src(config.sass64.src)
         .pipe($.sass().on('error', $.sass.logError))
         .pipe($.base64({
-            baseDir: 'src',
+            baseDir: config.src,
             extensions: ['svg', 'png', /\.jpg#datauri$/i],
             exclude: [/\.server\.(com|net)\/dynamic\//, '--live.jpg'],
             debug: true
         }))
-        .pipe($.concat('styles64.css'))
-        .pipe(gulp.dest('./dist/css'))
+        .pipe($.concat(config.sass64.output))
+        .pipe(gulp.dest(config.sass64.dest))
         .pipe($.sass())
         .pipe($.base64({
-            baseDir: 'src',
+            baseDir: config.src,
             extensions: ['svg', 'png', /\.jpg#datauri$/i],
             exclude: [/\.server\.(com|net)\/dynamic\//, '--live.jpg'],
             maxImageSize: 8 * 1024, // bytes
@@ -40,7 +40,7 @@ gulp.task('styles:images:base64', function () {
         }))
         .pipe($.rename({suffix: '.min'}))
         .pipe($.cleanCss())
-        .pipe(gulp.dest('./dist/css'))
+        .pipe(gulp.dest(config.sass64.dest))
         .pipe(browserSync.reload({stream: true}));
 });
 
@@ -106,7 +106,7 @@ gulp.task('watch', function () {
 gulp.task('default', function () {
     gulp.start(
         'styles',
-        'styles:images:base64',
+        'styles:64',
         'scripts',
         'images',
         'html',
