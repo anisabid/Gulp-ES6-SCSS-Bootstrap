@@ -7,6 +7,7 @@
             },
             bind: function () {
                 $(this.options.selector).bind('click', function () {
+                    $(this).toggleClass('is-active')
                     $('.offcanvas-collapse').toggleClass('open')
                 });
                 return true;

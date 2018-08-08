@@ -1,12 +1,3 @@
-html,
-body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
-}
-
-body {
-  padding-top: 56px;
-}
-
 @media (max-width: 767.98px) {
   .offcanvas-collapse {
     position: fixed;
@@ -25,8 +16,8 @@ body {
   }
 
   .offcanvas-collapse.open {
-    -webkit-transform: translateX(-1rem);
-    transform: translateX(-1rem); /* Account for horizontal padding on navbar */
+    -webkit-transform: translateX(0);
+    transform: translateX(0); /* Account for horizontal padding on navbar */
   }
 }
 

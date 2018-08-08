@@ -30,12 +30,11 @@ html,
 body {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
-// Btn Clean APC
-.btn-clean-apc {
-  position: fixed;
-  left: $CONST-BASE-UNIT;
-  top: $CONST-BASE-UNIT;
+
+body {
+
 }
 
 /* [1.2] Header

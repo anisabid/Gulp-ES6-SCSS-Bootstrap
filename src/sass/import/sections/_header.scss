@@ -4,6 +4,7 @@
 
 // Variable
 // --------------------------------------------------
+$header-navbar-border-color: #D1DDE9 !default;
 
 // Mixin
 // --------------------------------------------------
@@ -11,22 +12,27 @@
 // Making
 // --------------------------------------------------
 .header {
+  .navbar{
+    padding: 0;
+    border-bottom: 1px solid $header-navbar-border-color;
+  }
 
   .navbar-brand .logo {
     height: rem(52px);
     margin: 1.25rem 1.875rem;
+    display: none;
   }
 
   .navbar-nav {
-    &.primary-navbar,
-    &.secondary-navbar {
+    &.navbar-primary,
+    &.navbar-secondary {
       .nav-item {
         font-size: rem(13px);
         text-transform: uppercase;
       }
     }
 
-    &.primary-navbar {
+    &.navbar-primary {
       padding-right: rem($CONST-BASE-UNIT * 14);
       .nav-item {
         .nav-link {
@@ -35,9 +41,9 @@
       }
     }
 
-    &.secondary-navbar {
+    &.navbar-secondary {
       .nav-item {
-        border-left: 1px solid #D1DDE9;
+        border-left: 1px solid $header-navbar-border-color;
         padding: 0;
         .nav-link {
           padding: rem(($CONST-BASE-UNIT * 2) ($CONST-BASE-UNIT * 2.5));

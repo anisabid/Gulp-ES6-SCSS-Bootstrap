@@ -1,15 +1,22 @@
 <header class="header clearfix">
-    <nav class="navbar navbar-expand-lg fixed-top p-0">
+    <nav class="navbar navbar-light navbar-expand-lg">
         <a class="navbar-brand mr-auto mr-lg-0 p-0" href="/">
             <img class="logo" src="/images/maisonphenix-dark.svg" alt="MaisonPhenix">
         </a>
-        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+        <!--button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
             <span class="navbar-toggler-icon"></span>
+        </button-->
+
+        <button class="hamburger hamburger--spin navbar-toggler" type="button"
+             aria-label="Menu" aria-controls="navigation" data-toggle="offcanvas">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
         </button>
 
-        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <div class="navbar-collapse offcanvas-collapse" id="navigation">
 
-            <ul class="navbar-nav ml-auto primary-navbar">
+            <ul class="navbar-nav ml-auto navbar-primary">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Modèles & plans <span class="sr-only">(current)</span></a>
                 </li>
@@ -27,7 +34,7 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav secondary-navbar">
+            <ul class="navbar-nav navbar-secondary">
                 <li class="nav-item active">
                     <a class="nav-link" href="#">
                         <i class="icon icon-simulateur"></i>
