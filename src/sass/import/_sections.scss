@@ -23,6 +23,7 @@
 
 // Variable
 // --------------------------------------------------
+$section-body-padding-top: 92px !default;
 
 // Making
 // --------------------------------------------------
@@ -34,7 +35,7 @@ body {
 }
 
 body {
-
+  padding-top: $section-body-padding-top;
 }
 
 /* [1.2] Header
@@ -85,3 +86,10 @@ body {
 // Import
 // --------------------------------------------------
 @import "sections/body";
+
+/* [1.8] NavBar reverse
+------------------------------------
+*/
+// Import
+// --------------------------------------------------
+@import "sections/navbar_reverse";

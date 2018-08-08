@@ -55,8 +55,14 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest(config.js.dest));
 });
 
+gulp.task('images:clean', function () {
+    return gulp
+        .src(config.img.dest)
+        .pipe($.clean());
+})
+
 // Optimizes the images that exists
-gulp.task('images', function () {
+gulp.task('images', ['images:clean'], function () {
     return gulp
         .src(config.img.src)
         .pipe($.changed('images'))

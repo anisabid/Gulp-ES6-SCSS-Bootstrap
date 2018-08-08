@@ -20,7 +20,6 @@ $header-navbar-border-color: #D1DDE9 !default;
   .navbar-brand .logo {
     height: rem(52px);
     margin: 1.25rem 1.875rem;
-    display: none;
   }
 
   .navbar-nav {
@@ -29,6 +28,7 @@ $header-navbar-border-color: #D1DDE9 !default;
       .nav-item {
         font-size: rem(13px);
         text-transform: uppercase;
+        font-weight: $CONST-FONT-WEIGHT-SEMI-BOLD;
       }
     }
 

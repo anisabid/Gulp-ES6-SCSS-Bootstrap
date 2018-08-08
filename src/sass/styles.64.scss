@@ -18,4 +18,11 @@
   &.icon-user {
     background-image: url($path-icon-user);
   }
+
+  $path-icon-long-arrow-left-blue: "images/long-arrow-left-blue.svg";
+  &.icon-long-arrow-left-blue {
+    background-image: url($path-icon-long-arrow-left-blue);
+  }
+
+
 }

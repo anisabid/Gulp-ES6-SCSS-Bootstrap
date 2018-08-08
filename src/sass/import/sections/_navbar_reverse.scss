@@ -1,0 +1,55 @@
+//
+// Section NavBar Reverse
+// --------------------------------------------------
+
+// Variable
+// --------------------------------------------------
+
+// Mixin
+// --------------------------------------------------
+
+// Making
+// --------------------------------------------------
+
+.navbar-reverse {
+  .btn-back {
+    font-size: rem(16px);
+    font-weight: $CONST-FONT-WEIGHT-LIGHT;
+    text-transform: uppercase;
+    .icon.icon-long-arrow-left-blue {
+      width: 19px;
+      height: 12px;
+      display: inline-block;
+      margin-right: $CONST-BASE-UNIT * 2;
+    }
+  }
+
+
+  .breadcrumb {
+    font-size: rem(11px);
+  }
+
+  .breadcrumb-item {
+    a{
+      color: $breadcrumb-divider-color;
+    }
+
+  }
+
+
+
+
+  /*.breadcrumb {
+    background: transparent;
+    margin: 0;
+    .breadcrumb-item {
+      &,
+      + .breadcrumb-item::before,
+      a {
+        font-size: rem(11px);
+        font-weight: $CONST-FONT-WEIGHT-LIGHT;
+      }
+    }
+
+  }*/
+}
