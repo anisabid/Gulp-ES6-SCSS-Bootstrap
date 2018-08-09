@@ -4,9 +4,49 @@
 
 // Variable
 // --------------------------------------------------
+$footer-background-color: rgb(18, 63, 92) !default;
+$footer-color: rgb(255, 255, 255) !default;
+$footer-h3-color: rgb(238, 247, 255);
+$footer-hr-border-top-color: rgb(238, 247, 255);
 
 // Mixin
 // --------------------------------------------------
 
 // Making
 // --------------------------------------------------
+footer.footer {
+  background-color: $footer-background-color;
+  color: $footer-color;
+  padding: rem(($CONST-BASE-UNIT * 4.5) 0);
+
+  .h3 {
+    color: $footer-h3-color;
+    font-size: rem(18px);
+    font-weight: $CONST-FONT-WEIGHT-MEDIUM;
+    margin-bottom: rem($CONST-BASE-UNIT * 1.5);
+  }
+
+  a {
+    color: $footer-color;
+  }
+
+  .hr {
+    margin: rem(($CONST-BASE-UNIT * 2) 0);
+    border-top: 1px solid $footer-hr-border-top-color;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  .geoxia-group {
+    font-size: rem(10px);
+    font-weight: $CONST-FONT-WEIGHT-REGULAR;
+    line-height: rem(13px);
+  }
+  .copyright-nav{
+    font-size: rem(12px);
+    font-weight: $CONST-FONT-WEIGHT-LIGHT;
+    line-height: rem(24px);
+  }
+}
